@@ -15,5 +15,11 @@ return {
         require("dap.ext.vscode").load_launchjs()
       end,
     },
+    lsp = {
+      settings = {
+        updateImportsOnRename = true,
+        documentation = "full",
+      },
+    },
   },
 }
