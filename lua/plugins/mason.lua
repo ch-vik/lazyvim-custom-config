@@ -3,8 +3,11 @@ return {
   ---@class MasonSettings
   opts = {
     ensure_installed = {
-      "dart-debug-adapter",
-      "gopls"
+      "gopls",
+      "stylua",
+      "shfmt",
+      "goimports",
+      "gofumpt",
     },
   },
 }
