@@ -1,6 +1,6 @@
 return {
-  "mason.nvim",
-  ---@class MasonSettings
+  "williamboman/mason-lspconfig.nvim",
+  ---@class MasonLspconfigSettings
   opts = {
     ensure_installed = {
       "gopls",
@@ -8,6 +8,7 @@ return {
       "shfmt",
       "goimports",
       "gofumpt",
+      "biome",
     },
   },
 }
