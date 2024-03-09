@@ -3,5 +3,3 @@
 -- Add any additional keymaps here
 vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { silent = true })
 vim.keymap.set("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { silent = true })
--- Remove strange behavior in insert mode with <tab> key
-vim.keymap.del("i", "<tab>", nil)
