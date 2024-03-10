@@ -11,6 +11,15 @@ return {
       local cmp = require("cmp")
       local defaults = require("cmp.config.default")()
       return {
+        snippet = {
+          expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end,
+        },
+        sources = {
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
+        },
         completion = {
           completeopt = "menu,menuone,noinsert",
         },
@@ -30,12 +39,6 @@ return {
             cmp.abort()
             fallback()
           end,
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "path" },
-        }, {
-          { name = "buffer" },
         }),
         formatting = {
           fields = { "kind", "abbr", "menu" },
