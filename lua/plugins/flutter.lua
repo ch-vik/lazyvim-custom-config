@@ -13,6 +13,13 @@ return {
       register_configurations = function()
         require("dap").configurations.dart = {}
         require("dap.ext.vscode").load_launchjs()
+        require("dap").adapters.dart = {
+          --args = { "flutter" },
+          --command = "/home/kevin/.local/share/nvim/mason/bin/dart-debug-adapter",
+          args = { "debug_adapter" },
+          command = "/opt/flutter/bin/flutter",
+          type = "executable",
+        }
       end,
     },
     dev_log = {
