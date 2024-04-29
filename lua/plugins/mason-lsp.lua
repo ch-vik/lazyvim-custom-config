@@ -9,6 +9,8 @@ return {
       "goimports",
       "gofumpt",
       "biome",
+      "sqlfmt",
+      "sqlls",
     },
   },
 }
