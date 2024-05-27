@@ -3,8 +3,15 @@ return {
   opts = {
     ---@type table<string, conform.FormatterUnit[]>
     formatters_by_ft = {
-      sql = { "sqlfmt" },
+      sql = { "sql_formatter" },
     },
-  }
-
+    formatters = {
+      sql_formatter = {
+        args = {
+          "-l",
+          "postgresql",
+        },
+      },
+    },
+  },
 }

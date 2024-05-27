@@ -4,12 +4,7 @@ return {
   opts = {
     ensure_installed = {
       "gopls",
-      "stylua",
-      "shfmt",
-      "goimports",
-      "gofumpt",
       "biome",
-      "sqlfmt",
       "sqlls",
     },
   },
