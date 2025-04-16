@@ -11,7 +11,15 @@ return {
       enabled = true,
       run_via_dap = true,
       register_configurations = function()
-        require("dap").configurations.dart = {}
+        require("dap").configurations.dart = {
+          {
+            type = "dart",
+            request = "launch",
+            name = "xFarm Dev",
+            program = "${workspaceFolder}/packages/xfarm/main.dart",
+            args = { "--flavor", "dev" },
+          },
+        }
         require("dap.ext.vscode").load_launchjs()
         require("dap").adapters.dart = {
           --args = { "flutter" },
@@ -27,9 +35,17 @@ return {
     },
     lsp = {
       settings = {
-        updateImportsOnRename = true,
         documentation = "full",
+        analyzeAllWorkspacePackagesDependencies = true,
+        completeFunctionCalls = true,
+        enableSnippets = true,
+        updateImportsOnRename = true,
       },
     },
+    experimental = {
+      lsp_derive_paths = true,
+      multi_root = true,
+    },
+    root_patterns = { "melos.yaml, .git" },
   },
 }
