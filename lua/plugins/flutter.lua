@@ -7,9 +7,18 @@ return {
   },
   ---@class flutter.ProjectConfig
   opts = {
+    decorations = {
+      statusline = {
+        app_version = true,
+        device = true,
+        project_config = true,
+      },
+    },
+    widget_guides = {
+      enabled = true,
+    },
     debugger = {
       enabled = true,
-      run_via_dap = true,
       register_configurations = function()
         require("dap").configurations.dart = {
           {
@@ -20,7 +29,6 @@ return {
             args = { "--flavor", "dev" },
           },
         }
-        require("dap.ext.vscode").load_launchjs()
         require("dap").adapters.dart = {
           --args = { "flutter" },
           --command = "/home/kevin/.local/share/nvim/mason/bin/dart-debug-adapter",
@@ -41,10 +49,6 @@ return {
         enableSnippets = true,
         updateImportsOnRename = true,
       },
-    },
-    experimental = {
-      lsp_derive_paths = true,
-      multi_root = true,
     },
     root_patterns = { "melos.yaml, .git" },
   },
