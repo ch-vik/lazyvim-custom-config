@@ -20,15 +20,6 @@ return {
     debugger = {
       enabled = true,
       register_configurations = function()
-        require("dap").configurations.dart = {
-          {
-            type = "dart",
-            request = "launch",
-            name = "xFarm Dev",
-            program = "${workspaceFolder}/packages/xfarm/main.dart",
-            args = { "--flavor", "dev" },
-          },
-        }
         require("dap").adapters.dart = {
           --args = { "flutter" },
           --command = "/home/kevin/.local/share/nvim/mason/bin/dart-debug-adapter",
