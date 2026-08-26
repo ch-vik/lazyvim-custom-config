@@ -1,0 +1,29 @@
+// Dumps the project's resolved compile classpath for the Groovy language server.
+// Invoked by ~/.config/nvim/lua/plugins/groovy.lua via:
+//   ./gradlew --init-script <this file> -q lspClasspath
+// Prints one absolute path per line between the START/END markers.
+gradle.projectsEvaluated {
+    rootProject.tasks.register('lspClasspath') {
+        group = 'ide'
+        description = 'Prints the resolved compile classpath for editor language servers'
+        doLast {
+            Set<String> entries = new LinkedHashSet<String>()
+            ['compileClasspath', 'testCompileClasspath', 'integrationTestCompileClasspath'].each { String name ->
+                def conf = rootProject.configurations.findByName(name)
+                if (!conf || !conf.canBeResolved) {
+                    return
+                }
+                try {
+                    conf.resolvedConfiguration.lenientConfiguration.artifacts.each { entries.add(it.file.absolutePath) }
+                } catch (Exception e) {
+                    logger.lifecycle("lspClasspath: skipped ${name}: ${e.message}")
+                }
+            }
+            // Local jars declared as file dependencies (libs/*.jar)
+            rootProject.fileTree('libs').matching { include '**/*.jar' }.each { entries.add(it.absolutePath) }
+            println 'LSP_CLASSPATH_START'
+            entries.findAll { it.endsWith('.jar') }.each { println it }
+            println 'LSP_CLASSPATH_END'
+        }
+    }
+}

@@ -1,0 +1,84 @@
+{
+  "extends": "recommended",
+  "rules": {
+    "convention.CompileStatic": {
+      "severity": "info"
+    },
+    "convention.NoDef": "off",
+    "convention.VariableTypeRequired": "off",
+    "convention.FieldTypeRequired": "off",
+    "convention.MethodReturnTypeRequired": "off",
+    "convention.NoJavaUtilDate": "off",
+    "dry.DuplicateStringLiteral": "off",
+    "dry.DuplicateNumberLiteral": "off",
+    "dry.DuplicateListLiteral": "off",
+    "dry.DuplicateMapLiteral": "off",
+    "formatting.Indentation": "off",
+    "formatting.LineLength": "off",
+    "formatting.ClassEndsWithBlankLine": "off",
+    "formatting.ClassStartsWithBlankLine": "off",
+    "formatting.SpaceAroundMapEntryColon": "off",
+    "size.AbcMetric": "off",
+    "size.CyclomaticComplexity": "off",
+    "size.CrapMetric": "off",
+    "size.ClassSize": "off",
+    "size.MethodCount": "off",
+    "size.NestedBlockDepth": "off",
+    "size.ParameterCount": "off",
+    "size.MethodSize": {
+      "maxLines": 40,
+      "severity": "info"
+    },
+    "design.Instanceof": "off",
+    "design.BuilderMethodWithSideEffects": "off",
+    "unnecessary.UnnecessaryObjectReferences": "off",
+    "unnecessary.UnnecessaryGetter": {
+      "severity": "warning"
+    },
+    "imports.NoWildcardImports": {
+      "severity": "warning"
+    },
+    "imports.UnusedImport": {
+      "severity": "warning"
+    },
+    "imports.DuplicateImport": {
+      "severity": "warning"
+    },
+    "logging.Println": {
+      "severity": "warning"
+    },
+    "unused.UnusedPrivateMethodParameter": "off",
+    "exceptions.CatchException": "off",
+    "exceptions.CatchThrowable": "off",
+    "formatting.ClassJavadoc": "off",
+    "grails.GrailsDomainHasEquals": "off",
+    "grails.GrailsDomainHasToString": "off",
+    "grails.GrailsDomainStringPropertyMaxSize": "off",
+    "convention.StaticFieldsBeforeInstanceFields": "off",
+    "convention.PublicMethodsBeforeNonPublicMethods": "off",
+    "unnecessary.UnnecessaryGString": "off",
+    "naming.FactoryMethodName": "off",
+    "formatting.ConsecutiveBlankLines": "off",
+    "convention.ImplicitClosureParameter": "off",
+    "convention.ImplicitReturnStatement": "off",
+    "formatting.SpaceAfterOpeningBrace": "off",
+    "formatting.SpaceBeforeClosingBrace": "off",
+    "formatting.SpaceBeforeOpeningBrace": "off",
+    "formatting.BlockStartsWithBlankLine": "off",
+    "formatting.BlockEndsWithBlankLine": "off",
+    "formatting.MissingBlankLineBeforeAnnotatedField": "off",
+    "grails.GrailsStatelessService": "off",
+    "grails.GrailsDomainReservedSqlKeywordName": "off",
+    "junit.JUnitPublicNonTestMethod": "off",
+    "unnecessary.UnnecessaryPublicModifier": "off",
+    "basic.JavaIoPackageAccess": {
+      "severity": "info"
+    },
+    "basic.NoDouble": {
+      "severity": "error"
+    },
+    "basic.NoFloat": {
+      "severity": "error"
+    }
+  }
+}
